@@ -8,9 +8,10 @@ def analyze_sentiment(text):
 
     response = openai.Completion.create(
         model="gpt-3.5-turbo", # changed the model because this one is cheaper per token
+        messages=[{"role": "user", "content": prompt}],
         temperature=0, # changed it to 0 to make the outputs less random
         max_tokens = 10 # i just set it to 10 for no we can change it later
     )
 
-    sentiment = response.choices[0].text.strip()
+    sentiment = response.choices[0].message['content'].strip()
     return sentiment
