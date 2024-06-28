@@ -15,3 +15,7 @@ def analyze_sentiment(text):
 
     sentiment = response.choices[0].message['content'].strip()
     return sentiment
+
+if __name__ == "__main__":
+    # loop through each email in text file and output sentiment by calling the above function
+    print("")
