@@ -1,9 +1,10 @@
 import imaplib
 import email
+import os
 
 imap_server = "imap.gmail.com"
 email_address = "sentiment.tester@gmail.com"
-password = "smyv zhms bdol hdus"
+password = "smyv zhms bdol hdus"  
 
 imap = imaplib.IMAP4_SSL(imap_server)
 imap.login(email_address, password)
@@ -12,26 +13,29 @@ imap.select("Inbox")
 
 _, msgnums = imap.search(None, "ALL")
 
-for msgnums in msgnums[0].split():
-    _, data = imap.fetch(msgnums, "(RFC822)")
+msgnums = msgnums[0].split()
 
-    message = email.message_from_bytes(data[0][1])
-    
-   
-    print(f"From: {message.get('From')}")
-    print(f"To: {message.get('To')}")
-    print(f"BCC: {message.get('BCC')}")
-    print(f"Date: {message.get('Date')}")
-    print(f"Subject: {message.get('Subject')}")
-    
-    print("Content:")
-    
-    for part in message.walk():
-        if part.get_content_type() == "text/plain":
-            print(part.as_string())
+for msgnum in msgnums:
+    _, data = imap.fetch(msgnum, "(RFC822)")
+    raw_email = data[0][1]
+    message = email.message_from_bytes(raw_email)
+
+    with open("content.txt", "a") as file:  # Append mode
+        file.write(f"From: {message.get('From')}\n")
+        file.write(f"To: {message.get('To')}\n")
+        file.write(f"Date: {message.get('Date')}\n")
+        file.write(f"BCC: {message.get('BCC')}\n")
+        file.write("Content:\n")
+        
+        for part in message.walk():
+            if part.get_content_type() == "text/plain":
+                file.write(part.get_payload(decode=True).decode('utf-8'))
+        file.write("\n\n") 
+
+print(f"{os.getcwd()}{os.sep}content.txt")
 
 imap.close()
-    
+imap.logout()
     
     
 
