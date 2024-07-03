@@ -18,4 +18,5 @@ def analyze_sentiment(text):
 
 if __name__ == "__main__":
     # loop through each email in text file and output sentiment by calling the above function
-    print("")
+    with open("content.txt", "r") as f:
+        print(f.read())
