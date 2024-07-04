@@ -4,7 +4,7 @@ openai.api_key = "your-api-key-here" #change it to whatever api key u have
 
 def analyze_sentiment(text):
 
-    prompt=f"Analyze the sentiment of the following text and return the result as Angry, Happy, Sad:\n\n{text}\n\nSentiment:"
+    prompt=f"Analyze the sentiment of the following text and return the result as Positive, Negative, and Neutral:\n\n{text}\n\nSentiment:"
 
     response = openai.Completion.create(
         model="gpt-3.5-turbo", # changed the model because this one is cheaper per token
@@ -18,4 +18,10 @@ def analyze_sentiment(text):
 
 if __name__ == "__main__":
     # loop through each email in text file and output sentiment by calling the above function
-    print("")
+    with open("content.txt", "r") as f:
+        for line in f:
+            if "Content:" in line:
+                nextLine = f.readline().strip()
+                sentiment = analyze_sentiment(nextLine)
+                print("Sentiment: " + sentiment)
+                
