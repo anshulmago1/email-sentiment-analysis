@@ -44,13 +44,19 @@ body
 }
 
 .input-box i{
-    right: 20px;
-    top: 40%;
-    transform: translateY(-400%);
-    transform: translateX(+2000%);
+ 
+    transform: translateX(+235px);
 
     font-size: 20px;
 }
+
+.input-box j{
+
+    transform: translateX(+235px);
+    font-size: 20px;
+}
+
+ 
 
 .wrapper .btn{
     width: 100%;
