@@ -1,0 +1,37 @@
+.h1
+{
+    text-align: center;
+}
+
+
+body
+{
+    margin-left: 550px;
+    font-family: Helvetica, Arial, sans-serif;
+    animation: bgcolor infinite 20s;
+    background:rgb(147, 237, 255);
+}
+
+.navbar ul{
+    width: 40%;
+    list-style: none; 
+    background:rgb(255, 111, 0);
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+.navbar a{
+    color: white;
+    text-decoration: none; 
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: blue
+}
+.navbar li{
+    display:inline-block;
+}
