@@ -1,7 +1,6 @@
 import openai
-import os
 
-openai.api_key = os.getenv("OPENAI_API_KEY") #change it to whatever api key u have
+openai.api_key = "sk-None-owpUdxtcdb58wMtmeT1iT3BlbkFJFNwhP61z0TGL31Brh3lA"
 
 def analyze_sentiment(text):
 
