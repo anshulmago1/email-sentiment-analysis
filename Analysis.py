@@ -44,7 +44,10 @@ if __name__ == "__main__":
     
         if email:
             emails.append(email)
+
+    with open("sentiment.txt", "a") as file:
+        for email in emails:
+            sentiment = analyze_sentiment(email)
+            file.write(f"Sentiment: " + sentiment + "\n")
+            
     
-    for email in emails:
-        sentiment = analyze_sentiment(email)
-        print("Sentiment: " + sentiment)
