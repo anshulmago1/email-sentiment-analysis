@@ -11,16 +11,16 @@ imap.login(email_address, password)
 
 imap.select("Inbox")
 
-_, msgnums = imap.search(None, "ALL")
+status, msgnums = imap.search(None, "ALL")
 
 msgnums = msgnums[0].split()
 
 for msgnum in msgnums:
-    _, data = imap.fetch(msgnum, "(RFC822)")
+    status, data = imap.fetch(msgnum, "(RFC822)")
     raw_email = data[0][1]
     message = email.message_from_bytes(raw_email)
 
-    with open("content.txt", "a") as file:  # Append mode
+    with open("content.txt", "w") as file:  # Append mode
         file.write(f"From: {message.get('From')}\n")
         file.write(f"To: {message.get('To')}\n")
         file.write(f"Date: {message.get('Date')}\n")
