@@ -15,12 +15,15 @@ status, msgnums = imap.search(None, "ALL")
 
 msgnums = msgnums[0].split()
 
+with open('content.txt', 'r+') as f:
+        f.truncate(0)
+
 for msgnum in msgnums:
     status, data = imap.fetch(msgnum, "(RFC822)")
     raw_email = data[0][1]
     message = email.message_from_bytes(raw_email)
 
-    with open("content.txt", "w") as file:  # Append mode
+    with open("content.txt", "a") as file:
         file.write(f"From: {message.get('From')}\n")
         file.write(f"To: {message.get('To')}\n")
         file.write(f"Date: {message.get('Date')}\n")
