@@ -25,9 +25,13 @@ if __name__ == "__main__":
 
         emails = []
         email = []
+        email_addresses = []
         empty_line_count = 0
 
         for line in file:
+            if '@' in line:
+                email_addresses.append(line.stip())
+
             if line.strip() == '':
                 empty_line_count += 1
             else:
@@ -47,8 +51,6 @@ if __name__ == "__main__":
 
     with open("sentiment.txt", "w") as file:
 
-        for email in emails:
+        for n, email in enumerate(emails):
             sentiment = analyze_sentiment(email)
-            file.write(f"Sentiment: " + sentiment + "\n")
-            
-    
+            file.write(f"email_addresses[n]: " +  sentiment + "\n")
