@@ -1,3 +1,13 @@
-Sentiment: Neutral
-Sentiment: Neutral
 Sentiment: Negative
+Sentiment: Positive
+Sentiment: Positive
+Sentiment: Positive
+Sentiment: Negative
+Sentiment: Positive
+Sentiment: Positive
+Sentiment: Negative
+Sentiment: Negative
+Sentiment: Positive
+Sentiment: Negative
+Sentiment: Negative
+Sentiment: Positive
