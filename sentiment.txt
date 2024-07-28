@@ -1,13 +1,26 @@
-Sentiment: Negative
-Sentiment: Positive
-Sentiment: Positive
-Sentiment: Positive
-Sentiment: Negative
-Sentiment: Positive
-Sentiment: Positive
-Sentiment: Negative
-Sentiment: Negative
-Sentiment: Positive
-Sentiment: Negative
-Sentiment: Negative
-Sentiment: Positive
+--joe.green@gmail.com: Positive
+
+--bob.brown@gmail.com: Negative
+
+--mary.smith@gmail.com: Negative
+
+--john.thompson@email.com: Negative
+
+--steven.r@email.com <john.thompson@email.com>: Positive
+
+--william.p@email.com <john.thompson@email.com>: Negative
+
+--karen.t@email.com <john.thompson@email.com>: Positive
+
+--betsy.j@email.com <john.thompson@email.com>: Positive
+
+--oscar.m@email.com <john.thompson@email.com>: Negative
+
+--phillis.v@email.com <john.thompson@email.com>: Positive
+
+--pamela.b@email.com <john.thompson@email.com>: Positive
+
+--jonah.johnson@email.com <john.jameson@email.com>: Positive
+
+--frank.r@email.com <john.jameson@email.com>: Negative
+
