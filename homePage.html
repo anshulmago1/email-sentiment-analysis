@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>homePage</title>
@@ -9,12 +8,7 @@
     <meta name="google-signin-client_id" content="29509646092-8j2qjp247aeu0a0q7v1h14aq5bo44r4i.apps.googleusercontent.com">
 </head>
 
-<!--need to download Live Server extension --> 
-
-
-
-
-<body> 
+<body>
     <nav class="navbar">
         <ul>
             <li><a href="homePage.html">Home</a></li>
@@ -24,41 +18,36 @@
         </ul>
     </nav>
 
-     <h1>Login With Google:</h1>
+    <h1>Login With Google:</h1>
    
-     <body>
-        <div class="login-container">
-            
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        </div>
-    
-        <script>
-            function onSignIn(googleUser) {
-                // Get the user profile information
-                var profile = googleUser.getBasicProfile();
-                console.log('ID: ' + profile.getId());
-                console.log('Name: ' + profile.getName());
-                console.log('Image URL: ' + profile.getImageUrl());
-                console.log('Email: ' + profile.getEmail());
-    
-                // Send the ID token to the server
-                var id_token = googleUser.getAuthResponse().id_token;
-                console.log("ID Token: " + id_token);
-    
-                // Here, you would typically send the ID token to your server for further processing
-                // Example: Redirect to a backend route that handles the token
-                window.location.href = 'http://localhost:5500?id_token=' + id_token;
-            }
-    
-            function signOut() {
-                var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                    console.log('User signed out.');
-                });
-            }
-        </script>
-    </body>
+    <div class="login-container">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
 
+    <script>
+        function onSignIn(googleUser) {
+            // Get the user profile information
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
 
+            // Send the ID token to the server
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
 
+            // Here, you would typically send the ID token to your server for further processing
+            // Example: Redirect to a backend route that handles the token
+            window.location.href = 'http://localhost:5500?id_token=' + id_token;
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+</body>
 </html>
