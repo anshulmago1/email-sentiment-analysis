@@ -55,4 +55,4 @@ if __name__ == "__main__":
 
         for n, email in enumerate(emails):
             sentiment = analyze_sentiment(email)
-            file.write(f"--"+email_addresses[n]+":"  +  "sentiment" + "\n\n")
+            file.write(f"--"+email_addresses[n]+ ": " + sentiment + "\n\n")
