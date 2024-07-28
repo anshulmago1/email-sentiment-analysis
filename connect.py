@@ -24,8 +24,7 @@ for msgnum in msgnums:
     message = email.message_from_bytes(raw_email)
 
     with open("content.txt", "a") as file:
-        file.write(f"From: {message.get('From')}\n")
-        file.write(f"To: {message.get('To')}\n")
+    
         file.write(f"Date: {message.get('Date')}\n")
         file.write(f"BCC: {message.get('BCC')}\n")
         file.write("Content:\n")
