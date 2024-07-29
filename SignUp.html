@@ -8,6 +8,7 @@
     <title>JPMorgan Chase Sign Up</title>
     <link href="LogIn.css" rel="stylesheet" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -16,22 +17,22 @@
             <img src="JPMClogo.svg" alt="JPMorgan Chase Logo">
         </div>
         <div class="wrapper">
-            <form action="welcomePage.html">
+            <form id="signUpForm">
                 <h1>Email Sentiment Database Sign Up</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" id="username" placeholder="Username" required>
                     <i class='bx bx-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" id="email" placeholder="Email" required>
                     <i class='bx bx-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Password" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Confirm Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="input-box">
@@ -45,6 +46,39 @@
             </form>
         </div>
     </div>
+
+    <script>
+        $('#signUpForm').on('submit', function (e) {
+            e.preventDefault();
+            const username = $('#username').val();
+            const email = $('#email').val();
+            const password = $('#password').val();
+            const confirmPassword = $('#confirmPassword').val();
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            console.log('Sending signup request:', { username, email });
+
+            $.ajax({
+                url: 'http://localhost:5001/signup',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ username, email, password }),
+                success: function (response) {
+                    console.log('Sign up successful:', response);
+                    alert('Sign up successful!');
+                    window.location.href = 'LogIn.html';
+                },
+                error: function (response) {
+                    console.error('Sign up failed:', response);
+                    alert('Sign up failed: ' + response.responseJSON.error);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
