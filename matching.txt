@@ -1,18 +1,20 @@
-Andy - Tina
+Andy - 
+--joe.green@gmail.com
+--karen.t@gmail.com
+--betsy.j@gmail.com
 
+Angela - 
+--phillis.v@gmail.com
+--jonah.johnson@gmail.com
+--steven.r@gmail.com
 
-Angela - Bob
+Jim - 
+--bob.brown@gmail.com
+--mary.smith@gmail.com
+--frank.r@gmail.com
 
-
-Jim - Joe
-
-
-Oscar - Linda
-
-
-Pam - Martha
-
-
-Stanley - Jenny
+Stanely - 
+--william.p@gmail.com
+--oscar.m@gmail.com
 
 

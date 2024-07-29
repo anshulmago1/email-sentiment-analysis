@@ -1,18 +1,12 @@
-Andy
+Andy - responds to postitive customers
 
 
-Angela
+Angela - responds to postitive customers
 
 
-Jim
+Jim - responds to negative customers
 
 
-Oscar
-
-
-Pam
-
-
-Stanley
+Stanley - responds to negative customers
 
 

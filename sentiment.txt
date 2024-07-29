@@ -4,21 +4,21 @@
 
 --mary.smith@gmail.com: Negative
 
---john.thompson@email.com: Negative
+--karen.t@gmail.com: Positive
 
---steven.r@email.com <john.thompson@email.com>: Positive
+--betsy.j@gmail.com: Positive
 
---william.p@email.com <john.thompson@email.com>: Negative
+--phillis.v@gmail.com: Positive
 
---karen.t@email.com <john.thompson@email.com>: Positive
+--jonah.johnson@gmail.com: Positive
 
---oscar.m@email.com <john.thompson@email.com>: Negative
+--frank.r@gmail.com: Negative
 
---phillis.v@email.com <john.thompson@email.com>: Positive
+--william.p@gmail.com: Negative
 
---pamela.b@email.com <john.thompson@email.com>: Positive
+--steven.r@gmail.com: Positive
 
---jonah.johnson@email.com <john.jameson@email.com>: Positive
+--oscar.m@gmail.com: Negative
 
---frank.r@email.com <john.jameson@email.com>: Negative
+--pamela.b@gmail.com: Positive
 
