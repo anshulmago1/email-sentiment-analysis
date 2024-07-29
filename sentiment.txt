@@ -12,8 +12,6 @@
 
 --karen.t@email.com <john.thompson@email.com>: Positive
 
---betsy.j@email.com <john.thompson@email.com>: Positive
-
 --oscar.m@email.com <john.thompson@email.com>: Negative
 
 --phillis.v@email.com <john.thompson@email.com>: Positive
