@@ -17,7 +17,7 @@
             <img src="JPMClogo.svg" alt="JPMorgan Chase Logo">
         </div>
         <div class="wrapper">
-            <form id="loginForm">
+            <form id="loginForm" onsubmit="return validateLogin()">
                 <h1>Email Sentiment Database Login</h1>
                 <div class="input-box">
                     <input type="email" id="email" placeholder="Email" required>
@@ -40,29 +40,20 @@
     </div>
 
     <script>
-        $('#loginForm').on('submit', function (e) {
-            e.preventDefault();
-            const email = $('#email').val();
-            const password = $('#password').val();
+        function validateLogin() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var validEmail = "sentiment.tester@gmail.com";
+            var validPassword = "smyv zhms bdol hdus";
 
-            console.log('Sending login request:', { email, password });
-
-            $.ajax({
-                url: 'http://localhost:5001/login',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({ email, password }),
-                success: function (response) {
-                    console.log('Login successful:', response);
-                    alert('Login successful!');
-                    window.location.href = 'homePage.html';
-                },
-                error: function (response) {
-                    console.error('Login failed:', response);
-                    alert('Login failed: ' + response.responseJSON.error);
-                }
-            });
-        });
+            if (email === validEmail && password === validPassword) {
+                window.location.href = "homePage.html";
+                return false; 
+            } else {
+                alert("Invalid email or password. Please try again.");
+                return false; 
+            }
+        }
     </script>
 </body>
 
