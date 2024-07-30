@@ -20,5 +20,5 @@
 
 --oscar.m@gmail.com: Negative
 
---pamela.b@gmail.com: Positive
+--pamela.b@gmail.com: Negative
 
